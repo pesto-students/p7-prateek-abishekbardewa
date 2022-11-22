@@ -1,0 +1,84 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #000000;
+	color: #ffffff;
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main h1 {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 24px;
+	text-align: center;
+	color: #908f95;
+}
+.box-wrapper {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	width: 200px;
+	justify-content: center;
+	align-items: center;
+}
+.box {
+	height: 100px;
+	width: 100px;
+	transition: transform 1.5s ease;
+	transform: rotate(0deg);
+}
+
+.box:first-child {
+	background: #e90000;
+	transform-origin: top left;
+}
+
+.box:nth-child(2) {
+	background: #ffff00;
+	transform-origin: top right;
+}
+.box:nth-child(3) {
+	background: #0000ff;
+	transform-origin: bottom left;
+}
+
+.box:last-child {
+	background: #007d00;
+	transform-origin: bottom right;
+}
+
+.box-wrapper:hover .box:first-child {
+	transform-origin: top left;
+	transform: rotate(90deg);
+}
+.box-wrapper:hover .box:nth-child(2) {
+	transform-origin: top right;
+	transform: rotate(-90deg);
+}
+.box-wrapper:hover .box:nth-child(3) {
+	transform-origin: bottom left;
+	transform: rotate(-90deg);
+}
+.box-wrapper:hover .box:last-child {
+	transform-origin: bottom right;
+	transform: rotate(90deg);
+}
+
+@media screen and (max-width: 425px) {
+	.box-wrapper {
+		width: 130px;
+	}
+	.box {
+		height: 65px;
+		width: 65px;
+	}
+}
